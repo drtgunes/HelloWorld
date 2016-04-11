@@ -82,3 +82,40 @@ void print_armstrong_in_range(int x, int y)
         }
     }
 }
+
+void merge_array(int *x, int xs, int *y, int ys, int *z, int zs)
+{
+    int k=0, i= 0, j=0, d=0;
+
+    if (xs < ys)
+    {
+        d = ys - xs;
+    }
+    else if (xs > ys)
+    {
+        d = xs - ys;
+    }
+
+    
+
+    while (k < zs)
+    {
+
+            if (*(y + i) < *(x + j))
+                {
+                    *(z+k) = *(y+i);
+                    *(z+k+1) = *(x+i);
+
+                }
+                else if (*(y + i) > *(x + i))
+                {
+                    *(z+k) = *(x+i);
+                    *(z+k+1) = *(y+i);
+
+                }
+        k=k+2;
+        ++i;
+        ++j;
+
+    }
+}
